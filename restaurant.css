@@ -1,0 +1,259 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Marcellus", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+#body {
+    background-color: #3e4b54;
+    color: #e2d8c7;
+}
+
+html {
+    font-size: 16px;
+}
+
+/*Header und Navigation*/
+
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    height: 8rem;
+    background-color: #3e4b54;
+}
+
+.navbar-toggler-icon, .btn-close {
+    position: relative;
+    top: 2rem;
+}
+
+.nav-item a {
+    color:#e2d8c7;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+nav ul {
+    top: 2rem;
+    position: relative;
+}
+
+.btn a {
+    color:#fff;
+    text-decoration: none;
+}
+
+.nav-item:hover a,
+footer li a:hover {
+    color:#aeb3a9;
+}
+
+.navbar-brand {
+    position: relative;
+    top: 2rem;
+    left: 5rem;
+}
+
+nav .sidebar {
+    background-color: #3e4b54;
+    text-align: center;
+}
+
+/*Banner und Buttons */
+
+.banner {
+    background-image: url(images/backre.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    justify-content: center;
+    align-items: right;
+    text-align: center;
+}
+
+.description {
+    background-color: #3e4b54;
+    height: 100vh;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    padding: 3rem;
+}
+
+.description h1 {
+    font-size: 5rem;
+}
+
+.description p {
+    font-family: "League Script", serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/*Title*/
+
+#tisch h2,
+#menu h2 {
+    background-color: #3e4b54;
+    text-align: center;
+    font-size: 5rem;
+    color: #e2d8c7;
+    margin-top: 1rem;
+}
+
+/*Tisch reservieren*/
+
+.row {
+    margin: 3rem 0;
+}
+
+.row img {
+    margin-top: 2.5rem;
+    border-radius: 16px;
+}
+
+.col {
+    margin-bottom: 2rem;
+}
+
+#submitButton, .description button {
+   background-color: #95978e;
+   color: #fff;
+   margin-top: 1.5rem;
+   border: none;
+   border-radius: 20px;
+   width: 15vw;
+}
+
+#submitButton:hover, .description button:hover,
+#submitButton:active, .description button:active {
+    background-color: #aeb3a9;
+}
+
+#reservationModal .modal-content {
+    background-color: #3e4b54;
+    border-radius: 10px;
+    border: none;
+ }
+
+.modal .modal-content {
+    background-color: transparent;
+}
+
+.modal .modal-header {
+    border-bottom: none;
+  }
+
+.modal .modal-footer {
+    border-top: none;
+    justify-content: center;
+  }
+
+  .modal-footer .btn {
+    background-color: #95978e;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+  }
+
+  .modal-footer .btn:hover {
+    background-color: #aeb3a9;
+    color: #fff;
+  }
+
+
+label {
+    font-weight: bold;
+}
+
+#halfmoon_carousel {
+    height: auto;
+    width: 60vw;
+    padding-bottom: 3rem;
+    margin: 0 auto 2rem;
+}
+
+#halfmoon_carousel2 {
+    height: auto;
+    width: 35vw;
+    padding-bottom: 3rem;
+    margin: 0 auto 2rem;
+}
+
+#galerie, #galerie h2 {
+    background-color: #95978e;
+    text-align: center;
+    font-size: 5rem;
+    color: #e2d8c7;
+    margin-top: 1rem;
+}
+
+.carousel-inner {
+    margin-bottom: 3rem;
+}
+
+/*Footer*/
+
+footer {
+    width: 100%;
+    background-color: #95978e;
+    padding: 5rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer img {
+    width: 2.5rem;
+    padding-right: 0.8rem;
+}
+
+/*Tablet*/
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+
+    html {
+        font-size: 14px;
+    }
+
+    #submitButton, .description button {
+        width: 22vw;
+     }
+
+}
+
+/* Smartphone landscape and potrait */
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+
+    html {
+        font-size: 12px;
+    }
+
+    .description {
+        background-color: #3e4b54;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    #submitButton, .description button {
+        width: 30vw;
+    }
+
+
+
+}
+

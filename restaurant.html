@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Halfmoon Restaurant</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images\favicon-32x32.png">
+    <link href="restaurant.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Script&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body id="body">
+    <header class="container-fluid">
+      <!-- Navigation using Bootstrap -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="restaurant.html">
+            <img src="images/Logo.png" alt="Logo Halfmoon Restaurant" height="40">
+          </a>
+
+          <!-- Mobile toggle button (Hamburger icon & Close icon) -->
+          <button class="navbar-toggler shadow-none border-0 navbar-toggler-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarToggler">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="navbarToggler" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <!-- Collapsible Menu -->
+            <div class="offcanvas-body" id="navbarToggler">
+              <ul class="navbar-nav flex-grow-1 justify-content-center gap-5">
+                <li class="nav-item">
+                  <a class="nav-link" href="#galerie">Galerie</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#tisch">Tisch reservieren</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#menu">Menü</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#kontakte">Kontakte</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Select all links inside the offcanvas menu
+        const offcanvasLinks = document.querySelectorAll('#navbarToggler .nav-link');
+
+        // Select the offcanvas element
+        const offcanvasElement = document.getElementById('navbarToggler');
+
+        // Create a new Bootstrap Offcanvas instance
+        const offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+
+        // Add click event to each link to close the offcanvas and then scroll
+        offcanvasLinks.forEach(link => {
+          link.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default link behavior
+            const targetId = link.getAttribute('href'); // Get the section ID
+            offcanvas.hide(); // Close the offcanvas menu
+
+            // After the offcanvas is hidden, scroll to the target section
+            setTimeout(() => {
+              const targetElement = document.querySelector(targetId);
+              if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+              }
+            }, 300); // Delay to wait for the offcanvas to close
+          });
+        });
+      });
+    </script>
+    <!--Banner-->
+      <div class="banner d-flex flex-column">
+        <div class="description col-lg-6 col-md-12 col-sm-12 d-flex flex-column">
+          <h1>HALFMOON</h1>
+          <p>Traditionelle Rezepte mit einem modernen Twist: unser Geheimrezept für unvergessliche Momente.</p>
+          <button type="button" class="btn"><a href='#menu'>Entdecke unser Menü</a></button>
+        </div>
+      </div>
+
+      <!--Tisch Reservieren-->
+      <div id="tisch">
+        <h2>TISCH RESERVIEREN</h2>
+      </div>
+
+      <div class="container mt-4">
+        <div class="row">
+          <form class="col-md-6 col-lg-6 col-sm-12">
+            <div class="mb-3">
+              <label for="datum" class="form-label">Datum</label>
+              <input type="date" class="form-control" id="datum" name="your_date" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="uhrzeit" class="form-label">Uhrzeit</label>
+              <input type="time" class="form-control" id="uhrzeit" name="your_time" min="18:00" max="22:00" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="gäste" class="form-label">Nr. Gäste</label>
+              <input type="number" class="form-control" id="gäste" name="gäste" min="1" max="9" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="name" class="form-label">Name*</label>
+              <input type="text" class="form-control" id="name" name="your_name" placeholder="Geben Sie Ihren Namen ein" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="InputEmail1" class="form-label">Email*</label>
+              <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="telephone" class="form-label">Telefonnummer*</label>
+              <input type="tel" class="form-control" id="telephone" name="your_telephone" placeholder="Geben Sie Ihre Telefonnummer ein" required>
+            </div>
+
+            <button type="submit" id="submitButton" class="btn">Tisch reservieren</button>
+          </form>
+          <div class="col-md-6 col-lg-6 col-sm-12" id="tisch_img">
+            <img src="images/tisch.jpeg" class="img-fluid" alt="tisch"/>
+          </div>
+        </div>
+      </div>
+      <!-- Modal for Reservation Confirmation -->
+      <div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="reservationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="reservationModalLabel">RESERVIERUNG BESTÄTIGT</h5>
+            </div>
+            <div class="modal-body">
+              Vielen Dank! Ihre Reservierung wurde erfolgreich durchgeführt, Sie werden in Kürze eine Bestätigungs-E-Mail erhalten. Wir freuen uns, Sie bald zu sehen!
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn" data-bs-dismiss="modal">Schließen</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const form = document.querySelector('form'); // Select the form
+          const submitButton = document.getElementById('submitButton'); // Select the submit button
+          const reservationModal = new bootstrap.Modal(document.getElementById('reservationModal')); // Bootstrap Modal instance
+
+          form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            if (form.checkValidity()) {
+              // If the form is valid, show the modal
+              reservationModal.show();
+
+              // Optionally reset the form after showing the confirmation modal
+              form.reset();
+            } else {
+              // If the form is invalid, display error message (optional)
+              form.reportValidity(); // Let browser show validation feedback
+            }
+          });
+        });
+      </script>
+
+     <!--Galerie-->
+      <div id="galerie">
+        <h2>GALLERIE</h2>
+        <div id="halfmoon_carousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators" role="presentation">
+            <button type="button" data-bs-target="#halfmoon_carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#halfmoon_carousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#halfmoon_carousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#halfmoon_carousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#halfmoon_carousel" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#halfmoon_carousel" data-bs-slide-to="5"></button>
+            <button type="button" data-bs-target="#halfmoon_carousel" data-bs-slide-to="6"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/Amousbouche.jpg" class="d-block w-100" alt="Amousbouche Zucchini Mousse und Garnele">
+            </div>
+            <div class="carousel-item">
+              <img src="images/Capesante.jpeg" class="d-block w-100" alt="Gegrillte Jakobsmuscheln auf Artischockencreme">
+            </div>
+            <div class="carousel-item">
+              <img src="images/cavatelli.jpg" class="d-block w-100" alt="Cavatelli, frische Pasta, traditionell aus Süditalien">
+            </div>
+            <div class="carousel-item">
+              <img src="images/cioccolato.jpeg" class="d-block w-100" alt="Haselnuss- und Schokoladenmousse, überzogen mit geschmolzener Zartbitterschokolade">
+            </div>
+            <div class="carousel-item">
+              <img src="images/CioccolatoArancia.jpeg" class="d-block w-100" alt="Orangen- und Schokolade Tortino">
+            </div>
+            <div class="carousel-item">
+              <img src="images/coniglio.jpeg" class="d-block w-100" alt="Kaninchen mit Polenta und Walnüssen">
+            </div>
+            <div class="carousel-item">
+              <img src="images/dolci.jpeg" class="d-block w-100" alt="Vorbereitung Dessert">
+            </div>
+            <div class="carousel-item">
+              <img src="images/TrisDessert.jpeg" class="d-block w-100" alt="Treierlei Nachspeisen: Pfirsich Semifreddo mit gerösteten Nüssen, Vanillemousse mit Haselnusseis und Schoko Crumble, Tarte mit Orangencreme, gefüllt mit Schokolade">
+            </div>
+            <div class="carousel-item">
+              <img src="images/dolcino.jpeg" class="d-block w-100" alt="Mascarpone Tortino mit Cantucci und roten Früchten">
+            </div>
+            <div class="carousel-item">
+              <img src="images/fegato.jpeg" class="d-block w-100" alt="Leber mit Fruchtsauce und karamellisierten Zwiebeln">
+            </div>
+
+          <!-- Carousel controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#halfmoon_carousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#halfmoon_carousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="menu">
+        <h2>MENÜ</h2>
+        <div id="halfmoon_carousel2" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators" role="presentation">
+            <button type="button" data-bs-target="#halfmoon_carousel2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#halfmoon_carousel2" data-bs-slide-to="1"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/speisekarte.png" class="d-block w-100" alt="Speisekarte" data-bs-toggle="modal" data-bs-target="#imageModal1">
+            </div>
+            <div class="carousel-item">
+              <img src="images/getraenkekarte.png" class="d-block w-100" alt="Getränkekarte" data-bs-toggle="modal" data-bs-target="#imageModal2">
+            </div>
+
+            <!-- Carousel controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#halfmoon_carousel2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#halfmoon_carousel2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal 1 -->
+        <div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModal1Label" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-body">
+                <img src="images/speisekarte.png" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal 2 -->
+        <div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModal2Label" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-body">
+                <img src="images/getraenkekarte.png" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!--Footer-->
+    <footer>
+      <p>Für weitere Informationen zu privaten Feiern, Weinachtsfeiern, Tischen ab 10 Personen kontaktieren Sie uns bitte per E-Mail oder telefonisch unter den unten stehenden Kontaktdaten. Jemand aus unserem Team wird Ihnen alle Informationen geben, die Sie benötigen.</p><br>
+      <div class="offnungszeiten">
+        <p>Halfmoon <br>Löwenstr. 17, <br> 81234 München<br>DI - SA  18:00-22:30</p>
+        <div id="kontakte" class="d-flex flex-column container-fluid">
+          <div>
+            <img src="images/mail.png" alt="">
+            <a href="mailto:info@halfmoon.com">info@halfmoon.com</a>
+          </div>
+          <div>
+            <img src="images/phone.png" alt=""/>
+            <a href="tel:+123456789">+123456789</a>
+          </div>
+          <div>
+            <img src="images/instagram.png" alt=""/><a href="https://instagram.com/halfmoonfoodblog?igshid=YmMyMTA2M2Y=" target="_blank">halfmoonfoodblog</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
