@@ -9,7 +9,7 @@
 
 #body {
     background-color: #3e4b54;
-    color: #e2d8c7;
+    color: #E6E6E6;
 }
 
 html {
@@ -103,7 +103,7 @@ nav .sidebar {
     background-color: #3e4b54;
     text-align: center;
     font-size: 5rem;
-    color: #e2d8c7;
+    color: #E6E6E6;
     margin-top: 1rem;
 }
 
@@ -193,7 +193,7 @@ label {
     background-color: #95978e;
     text-align: center;
     font-size: 5rem;
-    color: #e2d8c7;
+    color: #fff;
     margin-top: 1rem;
 }
 
