@@ -253,6 +253,23 @@ footer img {
         width: 30vw;
     }
 
+    #halfmoon_carousel {
+        height: auto;
+        width: 80vw;
+    }
+
+    #halfmoon_carousel2 {
+        height: auto;
+        width: 80vw;
+        padding-bottom: 3rem;
+        margin: 0 auto 2rem;
+    }
+
+    #tisch h2,
+#menu h2, #galerie h2 {
+    font-size: 3rem;
+}
+
 
 
 }
